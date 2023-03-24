@@ -1,69 +1,47 @@
-import { useState, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './App.css';
 
 function App() {
 
-	const [username, setUsername] = useState('Pesho');
-	const [age, setAge] = useState();
-	const [creditCard, setCreditCard] = useState('');
-	const [occupation, setOccupation] = useState('engineering');
-	const [gender, setGender] = useState('male');
-	const [bio, setBio] = useState('');
+	const ref = useRef();
 	const [hobbies, setHobbies] = useState({});
 
+	const [formValues, setFormValues] = useState({
+		username: 'Pesho',
+		creditCard: '',
+		occupation: 'engineering',
+		gender: 'male',
+		bio: '',
+		age: '',
 
-
-
-
-
+	});
 
 	useEffect(() => {
-		setTimeout(() => {
-			setUsername('Gosho')
-		}, 3000)
-	}, [])
+		ref.current.value = formValues.username
+	}, [formValues.username])
 
-
-	const onUsernameChange = (e) => {
-		setUsername(e.target.value);
-
+	const onChangeHandler = (e) => {
+		// console.log(ref.current.value);
+		// if(e.target.name === 'username'){
+		// 	ref.current.value = e.target.value;
+		// }
+		setFormValues(state => ({ ...state, [e.target.name]: e.target.value }))
 	}
 
-	const onAgeChange = (e) => {
-		setAge(Number(e.target.value));
 
-	}
-
-	const onCreditCardChange = (e) => {
-		setCreditCard(e.target.value);
-
-	}
-
-	const onOccupationChange = (e) => {
-		setOccupation(e.target.value);
-
-	}
-
-	const onGenderChange = (e) => {
-		setGender(e.target.value)
-	}
-
-	const onBioChange = (e) => {
-		setBio(e.target.value)
-	}
-	const onHobbiesChange =(e) => {
-		setHobbies(state => ({...state, [e.target.value]: e.target.checked}) )
+	const onHobbiesChange = (e) => {
+		setHobbies(state => ({ ...state, [e.target.value]: e.target.checked }))
 	}
 
 	const onSubmit = (e) => {
 		e.preventDefault();
 
-		console.log(username);
-		console.log(age);
-		console.log(creditCard);
-		console.log(occupation);
-		console.log(gender);
-		console.log(bio);
+		console.log(formValues.username);
+		console.log(formValues.age);
+		console.log(formValues.creditCard);
+		console.log(formValues.occupation);
+		console.log(formValues.gender);
+		console.log(formValues.bio);
 		console.log(hobbies);
 	}
 
@@ -79,8 +57,8 @@ function App() {
 							type="text"
 							name="username"
 							id="username"
-							value={username}
-							onChange={onUsernameChange}
+							value={formValues.username}
+							onChange={onChangeHandler}
 						/>
 					</div>
 
@@ -90,20 +68,20 @@ function App() {
 							type="number"
 							name="age"
 							id="age"
-							value={age ?? ''}
-							onChange={onAgeChange}
+							value={formValues.age}
+							onChange={onChangeHandler}
 						/>
 					</div>
 
-					{age > 18 && (
+					{Number(formValues.age) > 18 && (
 						<div>
 							<label htmlFor="credit-card">Credit Card</label>
 							<input
 								type="text"
 								name="credit-card"
 								id="credit-card"
-								value={creditCard}
-								onChange={onCreditCardChange}
+								value={formValues.creditCard}
+								onChange={onChangeHandler}
 							/>
 						</div>
 					)}
@@ -113,8 +91,8 @@ function App() {
 						<select
 							name="occupation"
 							id="occupation"
-							value={occupation}
-							onChange={onOccupationChange}
+							value={formValues.occupation}
+							onChange={onChangeHandler}
 						>
 							<option value="it">IT</option>
 							<option value="engineering">Engineering</option>
@@ -126,37 +104,41 @@ function App() {
 
 					<div>
 						<label htmlFor="male">Male</label>
-						<input type="radio" name="gender" id="male" value="male" onChange={onGenderChange} checked={gender === 'male'} />
+						<input type="radio" name="gender" id="male" value="male" onChange={onChangeHandler} checked={formValues.gender === 'male'} />
 						<label htmlFor="female">Female</label>
-						<input type="radio" name="gender" id="female" value="female" onChange={onGenderChange} checked={gender === 'female'} />
+						<input type="radio" name="gender" id="female" value="female" onChange={onChangeHandler} checked={formValues.gender === 'female'} />
 
 					</div>
 
 					<div>
 						<label htmlFor="bio">Bio</label>
-						<textarea name="boi" id="boi" cols="30" rows="10" value={bio} onChange={onBioChange}></textarea>
+						<textarea name="bio" id="bio" cols="30" rows="10" value={formValues.bio} onChange={onChangeHandler}></textarea>
 					</div>
 
 					<div>
 
 						<label htmlFor="hiking">Hiking</label>
-						<input type="checkbox" name="hobbies" id="hiking" value="hiking" onChange={onHobbiesChange} checked={hobbies['hiking'] || false}/>
+						<input type="checkbox" name="hobbies" id="hiking" value="hiking" onChange={onHobbiesChange} checked={hobbies['hiking'] || false} />
 
 						<label htmlFor="reading">Reading</label>
-						<input type="checkbox" name="hobbies" id="reading" value="reading" onChange={onHobbiesChange} checked={hobbies['reading'] || false}/>
+						<input type="checkbox" name="hobbies" id="reading" value="reading" onChange={onHobbiesChange} checked={hobbies['reading'] || false} />
 
 						<label htmlFor="running">Running</label>
-						<input type="checkbox" name="hobbies" id="running" value="running" onChange={onHobbiesChange} checked={hobbies['running'] || false}/>
+						<input type="checkbox" name="hobbies" id="running" value="running" onChange={onHobbiesChange} checked={hobbies['running'] || false} />
 
 						<label htmlFor="gaming">Gaming</label>
-						<input type="checkbox" name="hobbies" id="gaming" value="gaming" onChange={onHobbiesChange} checked={hobbies['gaming'] || false}/>
+						<input type="checkbox" name="hobbies" id="gaming" value="gaming" onChange={onHobbiesChange} checked={hobbies['gaming'] || false} />
 
 						<label htmlFor="coding">Coding</label>
-						<input type="checkbox" name="hobbies" id="coding" value="coding" onChange={onHobbiesChange} checked={hobbies['coding'] || false}/>
-					
+						<input type="checkbox" name="hobbies" id="coding" value="coding" onChange={onHobbiesChange} checked={hobbies['coding'] || false} />
+
 
 					</div>
 
+					<div>
+						<label htmlFor="unControlled">Uncontrolled</label>
+						<input type="text" name="uncontrolled" id="uncontrolled" ref={ref}/>
+					</div>
 
 					<div>
 						<input type="submit" value="Send" />
