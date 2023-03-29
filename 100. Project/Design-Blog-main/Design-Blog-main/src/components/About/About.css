@@ -1,0 +1,128 @@
+.about-mainBanner-mainImg img {
+  width: 100%;
+}
+
+.about-mainBanner-sideImg img {
+  width: 100%;
+}
+
+.about-mainBanner-info {
+  padding: 34px 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.about-mainBanner-info-title {
+  max-width: 40%;
+  font-size: 40px;
+  padding-bottom: 15px;
+}
+
+.about-mainBanner-info-text {
+  max-width: 55%;
+  font-size: 19px;
+}
+
+.beliefs-banner {
+  display: flex;
+  align-items: center;
+}
+
+.beliefs-banner-img {
+  width: 80%;
+}
+
+.beliefs-banner-img img {
+  width: 100%;
+}
+
+.beliefs-banner-text {
+  width: 50%;
+  margin-left: 80px;
+}
+
+.beliefs-banner-text-title {
+  width: 63%;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.beliefs-banner-text-subtext {
+  width: 58%;
+  font-size: 19px;
+}
+
+.items-banner {
+  background: rgb(6, 12, 98);
+  background: linear-gradient(
+    45deg,
+    rgba(6, 12, 98, 1) 0%,
+    rgba(16, 63, 141, 1) 25%,
+    rgba(41, 67, 178, 1) 50%,
+    rgba(28, 176, 209, 1) 75%,
+    rgba(46, 253, 207, 1) 100%
+  );
+  color: white;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 80px 200px;
+}
+
+.items-banner-item-img img {
+  width: 30%;
+}
+
+.items-banner-item-title {
+  font-size: 25px;
+  text-align: center;
+  position: relative;
+  padding: 10px 0 20px 0;
+}
+
+.items-banner-item-title::after {
+  content: "";
+  width: 85%;
+  height: 1px;
+  background: rgb(255, 255, 255);
+  position: absolute;
+  left: 35px;
+  bottom: -14px;
+}
+
+.items-banner-item-text {
+  margin-top: 15px;
+  padding: 0px 30px;
+  font-size: 19px;
+}
+
+.ourWork-banner {
+  display: flex;
+  align-items: center;
+}
+
+.ourWork-banner-img {
+  width: 80%;
+}
+
+.ourWork-banner-img img {
+  width: 100%;
+}
+
+.ourWork-banner-text {
+  width: 50%;
+  margin-left: 180px;
+}
+
+.ourWork-banner-text-title {
+  width: 63%;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.ourWork-banner-text-subtext {
+  width: 58%;
+  font-size: 19px;
+}

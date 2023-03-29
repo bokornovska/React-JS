@@ -1,0 +1,101 @@
+.designDetails-page {
+  min-height: 88vh;
+}
+
+.designDetails-content {
+  max-width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+  line-height: 1.5;
+  font-size: 22px;
+}
+
+.designDetails-content img {
+  width: 100%;
+}
+
+.designDetails-content-title {
+  font-size: 50px;
+  text-align: center;
+}
+
+.designDetails-content-maker {
+  text-align: center;
+  font-weight: 400;
+  font-size: 32px;
+  padding: 20px 0;
+}
+
+.designDetails-content-art1Title,
+.designDetails-content-art2Title {
+  font-size: 38px;
+  padding-top: 25px;
+}
+
+.designDetails-content-art1Text,
+.designDetails-content-art2Text {
+  padding: 20px 0;
+}
+
+.designDetails-content-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0 10px 0;
+}
+
+.designDetails-content-buttons-like {
+  background: #611ace;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 20px;
+}
+
+.designDetails-content-buttons-like i {
+  padding-right: 10px;
+}
+
+.designDetails-content-likes-total {
+  padding: 0 24px;
+  border-radius: 12px;
+  border: 2px solid #611ace;
+}
+
+.designDetails-content-likes-total {
+  color: #611ace;
+}
+
+.designDetails-content-buttons-edit {
+  background-color: #0b177c;
+  margin-right: 26px;
+}
+
+.designDetails-content-buttons-delete {
+  background-color: #320158;
+}
+
+.designDetails-content-buttons-edit,
+.designDetails-content-buttons-delete {
+  text-decoration: none;
+  color: white;
+  padding: 4px 34px;
+  border-radius: 10px;
+}
+
+.designDetails-content-buttons-edit:hover {
+  background-color: #0e1ea7;
+  color: white;
+}
+
+.designDetails-content-buttons-delete:hover {
+  background-color: #540094;
+  color: white;
+}
+
+.designDetails-content-buttons-like:hover {
+  background-color: #c60fe7;
+}
+
+#hidden {
+  display: none;
+}

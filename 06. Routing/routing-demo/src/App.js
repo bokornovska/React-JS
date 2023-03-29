@@ -19,6 +19,7 @@ function App() {
                     <Route path='/characters' element={<CharacterList />} />
                     <Route path='/characters/:characterId/*' element={<Character />} />
                 </Routes>
+                
             </header>
         </div>
     );

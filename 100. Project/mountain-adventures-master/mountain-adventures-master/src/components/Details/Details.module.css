@@ -1,0 +1,49 @@
+.table {
+    margin: 2em;
+    color: black;
+}
+
+.key {
+    display: grid;
+    justify-content: start;
+}
+
+.odd {
+    background-color: #f08349;
+}
+
+.table thead {
+    border: 1px solid #ddd;
+    background-color: #f08349;
+    padding: 8px;
+}
+
+.table th {
+    padding: 2em;
+}
+
+.table tr {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.table td {
+    padding: 2em;
+}
+
+.img {
+    margin: 2em;
+    max-width: 700px;
+    max-height: 500px;
+}
+
+.description {
+    margin-left: 2em;
+    color: black;
+}
+
+.commentForm {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

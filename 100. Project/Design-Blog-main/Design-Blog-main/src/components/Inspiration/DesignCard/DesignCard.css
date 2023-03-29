@@ -1,0 +1,37 @@
+.inspiration-collection {
+  padding: 30px;
+  max-width: 33%;
+  height: 100%;
+}
+
+.inspiration-collection:hover {
+  box-shadow: 0px 0px 4px 0px black;
+  border-radius: 12px;
+}
+
+.inspiration-collection-ctn {
+  text-decoration: none;
+  color: black;
+}
+
+.inspiration-collection-ctn {
+  color: black;
+}
+
+.inspiration-collection-ctn:hover {
+  color: #4a4ee1;
+}
+
+.inspiration-collection-img {
+  padding-bottom: 20px;
+}
+
+.inspiration-collection-img img {
+  width: 380px;
+  height: 220px;
+  object-fit: cover;
+}
+
+.inspiration-collection-text {
+  padding-top: 6px;
+}
